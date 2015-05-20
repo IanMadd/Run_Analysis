@@ -1,0 +1,37 @@
+---
+title: "Read Files Function"
+output: html_document
+---
+
+This is a function that reads files from a directory and assigns them to the global environment. It gives their variables in the global environment the same name that the original files have in the directory.
+
+```{r cache=TRUE}
+read_files_function <- function(ListOfFilesWithFullNames){
+        ldf <- lapply(ListOfFilesWithFullNames, read.table)
+        
+        cleanedfilenames <- vector()
+        for (i in 1:length(ListOfFilesWithFullNames)){
+                splitfilename <- strsplit(as.character(ListOfFilesWithFullNames[i]), "/")[[1]]
+                cleanedfilenames[i] <- splitfilename[length(splitfilename)]        
+        }
+        assign(paste(strsplit(ListOfFilesWithFullNames, "/")[[1]][4],"_files", sep=""), cleanedfilenames)
+        for (i in 1:length(ldf)){
+                assign(paste(cleanedfilenames[i]), ldf[[i]], envir = .GlobalEnv)
+        }   
+}
+```
+
+
+
+```{r}
+ls()
+filenames1 <- list.files("./data/UCI HAR Dataset/test", pattern="*.txt", full.names=TRUE)
+read_files_function(filenames1)
+ls()
+```
+It's important that the function is given full file names. For example:
+```{r}
+filenames1
+```
+
+The dataset I use in this example can be found here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
