@@ -43,7 +43,5 @@ import_files_function(filenames4)
 
 remove("filenames1", "filenames2", "filenames3", "filenames4")
 
-
-remove(all_files)
 all_files <- ls()
 View(get(all_files[1]))
