@@ -1,11 +1,16 @@
-**Run Analysis**
-================
+**Code Book**
+=============
+
+ 
+
+Run Analysis
+============
 
 Data Summary
 ------------
 
-This is a study involving 30 volunteers who used Samsung smartphones to record
-physical activities.
+This is a study involving 30 subjects who used accelerometers and gyroscopes in
+Samsung smartphones to record different physical activities.
 
 ###  
 
@@ -65,6 +70,14 @@ The dataset includes the following files:
 
  
 
+There is one R file that analyzes this data and one Readme.
+
+-   run\_analysis.r
+
+-   README.md
+
+ 
+
 File Descriptions:
 ------------------
 
@@ -86,14 +99,14 @@ observations (rows) and the test files have 2947 observations (rows).
 
  
 
-Both files contain one column. There are 30 volunteers in this study, numbered 1
-through 30. Each row in both files identifies the volunteer who performed the
+Both files contain one column. There are 30 subjects in this study, numbered 1
+through 30. Each row in both files identifies the subject who performed the
 activity associated with that row.
 
--   There are 21 train volunteers with numbers: 1, 3, 5, 6, 7, 8, 11, 14, 15,
-    16, 17, 19, 21, 22, 23, 25, 26, 27, 28, 29, & 30.
+-   There are 21 train subjects with numbers: 1, 3, 5, 6, 7, 8, 11, 14, 15, 16,
+    17, 19, 21, 22, 23, 25, 26, 27, 28, 29, & 30.
 
--   There are 9 test volunteers with numbers: 2, 4, 9, 10, 12, 13, 18, 20, & 24.
+-   There are 9 test subjects with numbers: 2, 4, 9, 10, 12, 13, 18, 20, & 24.
 
  
 
@@ -138,17 +151,19 @@ person was engaged in. Numbers in the V1 column correspond to the activity. The
 activity\_labels.txt file shows which activity corresponds with which number.
 See here:
 
-    1 WALKING
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 WALKING
 
-    2 WALKING\_UPSTAIRS
+2 WALKING_UPSTAIRS
 
-    3 WALKING\_DOWNSTAIRS
+3 WALKING_DOWNSTAIRS
 
-    4 SITTING
+4 SITTING
 
-    5 STANDING
+5 STANDING
 
-    6 LAYING
+6 LAYING
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  
 
@@ -188,7 +203,10 @@ data into one data.frame and labels the columns so they are understandable.
 
  
 
+### Creating a New Data Set
 
+Using aggregate() and the I’ll create a new data set with one row for each
+activity for each each subject, showing the mean of each variable.
 
  
 
