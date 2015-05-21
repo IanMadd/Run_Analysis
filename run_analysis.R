@@ -114,3 +114,6 @@ Tidy_Data_aggregate <- Tidy_Data_aggregate[, c(1,2,4, 6:566)]
 #Done
 
 
+write.table(Tidy_Data_aggregate, file="./Tidy_Data_aggregate.txt", row.names=FALSE)
+
+

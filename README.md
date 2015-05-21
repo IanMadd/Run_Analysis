@@ -4,12 +4,15 @@
  
 
 This project uses data from a study of 30 subjects using activity trackers in
-Samsung smartphones. The smartphones recorded acceleration and gyroscopic motion
+Samsung smartphones. The smartphones recorded acceleration and angular velocity
+while the subjects performed one of six activities (WALKING, WALKING\_UPSTAIRS,
+WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING).
 
  
 
-There is one run\_analysis.R file which performs all the operations from
-importing the data to creating the final dataset.
+The 30 subjects are split into two groups, test and train. The run\_analysis.R
+file takes the data from these two groups and combines them into one file and
+labels the variables based on the measured features.
 
  
 
@@ -51,9 +54,9 @@ data into one data.frame and labels the columns so they are understandable.
 
 ### Creating a New Data Set
 
-Using aggregate() and the I’ll create a new data set with one row for each
-activity for each each subject, showing the mean of each variable. There is a
-total of 180 rows.
+Using aggregate() and the I’ll create a new data set (“Tidy\_data\_aggregate”)
+with one row for each activity for each each subject, showing the mean of each
+variable. There is a total of 180 rows with 561 measured variables.
 
  
 
